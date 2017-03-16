@@ -1,0 +1,147 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <script type="text/javascript" src="js/rainmaker3.js"></script>
+
+
+    <title>Rainmaker</title>
+</head>
+<body> 
+    <br>  
+    <br>  
+    <br>  
+    <br>  
+    <div class="row" >
+        <div class="col-lg-offset-2 col-lg-8 ibox-content" >
+
+        <div class="row">
+            <div class="form-group col-lg-6 col-md-6 no-padding-left">
+                <div class="custom_form_label col-lg-6"><label class="custom_form_label">Proposed Index Markup Rate:</label></div>
+                <div class="col-lg-6"><label id="proposed_index_slider_text">&#36;50</label></div>
+            </div>
+        </div>
+        <div class="row col-lg-12" id="whole_slider_div" >
+            <div class="ui-widget-content rainmaker_slider" style="height: 1em; margin-top: 20px; margin-left: 15px; margin-right: 15px;">     
+                <input type="range" class="points" value="50" min="0" max="500" style="height: 30px; transform: translate(0px, -55%);" oninput="indexChangeVal(this.value)" onchange="indexChangeVal(this.value)" onmouseup="functionX()">
+            </div>
+        </div>
+
+        <div class="row col-lg-12" >
+            <div class="text-left col-lg-6 slider-label slider-left" style="padding: 0px; padding-left: 15px">
+                <p>&nbsp;&#36;0</p>
+            </div>
+            <div class="text-right col-lg-6 slider-label slider-right" style="padding: 0px;padding-right: 15px">
+                <p>&#36;500</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+      var indexVal = 50;
+      var interchangeVal = 50;
+      function indexChangeVal(newVal) {
+        $("#proposed_index_slider_text").text("$" + newVal);
+        indexVal = newVal;
+  }
+
+  function functionX() {
+        console.log("for Anush <3 " + indexVal + ", " + interchangeVal); 
+  }
+</script>
+
+<style type="text/css">
+
+      .rainmaker_slider {
+        background: green; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(-90deg, darkgreen, lightgreen, white); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(-90deg,darkgreen, lightgreen, white); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(-90deg,darkgreen, lightgreen, white); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(-90deg,darkgreen, lightgreen); /* Standard syntax */
+        height: 1em;
+        margin-top: 20px; 
+        margin-left: 15px; 
+        margin-right: 15px;
+  }
+  .form-control {
+        border: 1px solid black;
+  }
+  .slightGreyBackground {
+        background-color: #DDDDDD;
+        padding-top: 10px;
+
+  }
+
+
+  .slider-label {
+        margin-top: 5px;
+  }
+  .slider-left, .slider-right {
+        padding: 0px;
+  }
+
+
+  /*From here on its onloy messing witht the slider*/
+
+/*  This indented css was copied from https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+*/
+                          input[type=range] {
+                            -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+                            width: 100%; /* Specific width is required for Firefox. */
+                            background: transparent; /* Otherwise white in Chrome */
+                        }
+
+                        input[type=range]::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                        }
+
+                        input[type=range]:focus {
+                            outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+                        }
+
+                        input[type=range]::-ms-track {
+                            width: 100%;
+                            cursor: pointer;
+
+                            /* Hides the slider so custom styles can be added */
+                            background: transparent; 
+                            border-color: transparent;
+                            color: transparent;
+                        }
+
+/*end completly copied code. The rest of the code is however modified and from same source
+*/
+input[type=range]::-webkit-slider-thumb {
+
+    height: 30px;
+    width: 30px;
+    background-image: url("./filter.png"); background-size: 30px 30px;  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+
+    height: 30px;
+    width: 30px;
+    background-image: url("./filter.png"); background-size: 30px 30px;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+
+    height: 30px;
+    width: 30px;
+    background-image: url("./filter.png"); background-size: 30px 30px;
+}
+
+</style>
+</html>
+
+
+
