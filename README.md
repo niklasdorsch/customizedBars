@@ -3,4 +3,4 @@
 <br>
 <div>Live page: https://niklasdorsch.github.io/customizedSliders/<div>
 
-<img src="./screenshot.png">
+<img src="./screenshot.PNG">
